@@ -1,0 +1,243 @@
+body {
+    margin: 0 auto; /* V: added auto in to make the page scalable */
+    background: #efefef;  
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    background: #FF5252;
+    color: white;
+    padding: 20px 5px 5px 5px;
+    text-decoration: none;
+    box-shadow: 0px 2px 10px 0px rgba(156,156,156,1);   
+}
+
+container {
+    margin: auto;
+    align-content: center;
+}
+
+.box {
+    float: center;
+    margin: auto;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding-bottom: 1%;
+    display: inline-block;
+    background-color: #ffffff;
+    text-align: center;
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0.75;
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+.box:hover {
+    float: center;
+    margin: auto;
+    margin-left: 2%;
+    margin-right: 1%;
+    margin-top: 2%;
+    padding-bottom: 1%;
+    display: inline-block;
+    background-color: #ffffff;
+    text-align: center;
+    width: 28%;
+    height: auto;
+    box-shadow: 2px 4px 20px 2px rgba(156,156,156,1);
+    border-radius: 10px;
+    opacity: 1;
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+
+.bigbox {
+    float: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: inline-block;
+    background-color: #ffffff;
+    text-align: center;
+    width: 96%;
+    height: auto;
+    box-shadow: 0px 2px 10px 0px rgba(156,156,156,1);
+    border-radius: 10px;
+}
+
+#footer {
+    bottom:0; /* V: The footer will now always stay at the bottom of the page even when you change the browser size */
+    width:100%;
+    height: 30px;   /* C: Height of the footer */
+    background: #D32F2F;
+    text-align: center;
+    padding: 5px;
+    position:fixed;
+    left: 0px;
+    bottom: 0;
+    font-family: lato;
+    box-shadow: 0px -1px 10px 0px rgba(156,156,156,1);
+}
+
+.photo {
+    display: inline;
+    max-width: 75%; /* V: images will scale with the page */
+    height: auto;
+    margin-top: 1%;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px -1px 10px 0px rgba(156,156,156,1);
+}
+
+.smallphoto {
+    display: inline;
+    float: left;
+    width: 300px;
+    height: auto;
+    margin: 40px;
+    box-shadow: 0px -1px 10px 0px rgba(156,156,156,1);
+}
+
+.groupphoto {
+    display: inline;
+    max-width: 30%; /* V: images will scale with the page */
+    height: auto;
+    margin: 2%;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px -1px 10px 0px rgba(156,156,156,1);
+}
+
+h1 {
+    font-family: "Lato", sans-serif;
+    color: #212121;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Lato", sans-serif;
+    color: #212121;
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 50px;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    color: #D32F2F;
+    font-size: 36px;
+    text-align: center;
+}
+
+p {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    font-size: 16px;
+    color: #434343;
+    font-family: "Lato", sans-serif;
+    text-align: justify;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    border-radius: 10px;
+}
+
+nav ul li a {
+    margin: 0% 0% 1% 2%;
+    display: inline-block;
+    list-style: none;
+    background: #ffffff;
+    width: 10%;
+    -webkit-transition: all 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 600ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    padding: 10px 15px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #D32F2F;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav ul li a:hover { /* V: hover animation for the navigation */
+    margin: 0% 0% 0% 2%;
+    display: inline-block;
+    list-style: none;
+    background: #D32F2F;
+    width: 15%;
+     -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    padding: 10px 15px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0px 1px 2px 0px rgb(47, 39, 39);
+    border-radius: 10px;
+}
+
+.button {
+    float: left;
+    display: inline;
+    list-style: none;
+    background: #D32F2F;
+    width: 10%;
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    padding: 10px 15px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover { 
+    float: left;
+    display: inline;
+    list-style: none;
+    background: #ffffff;
+    width: 15%;
+     -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    padding: 10px 15px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #D32F2F;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 0px rgb(47, 39, 39);
+}
