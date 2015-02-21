@@ -16,14 +16,23 @@
             $surname = "";
             $email = "";
         }
-           
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $username = refine_input($_POST["username"]);
+      $password = refine_input($_POST["password"]);
+      $name = refine_input($_POST["name"]);
+      $name = ucfirst($name);
+      $surname = refine_input($_POST["surname"]);
+      $surname = ucfirst($surname);
+      $email = refine_input($_POST["email"]);
+    }
     ?>
 
 <?php
          $message = "Welcome to this generic site";
     ?>
     
-    <?php
+<?php
     if(isset($_POST["submit"])) {
 
         if(empty($username)) {
@@ -45,17 +54,14 @@
             } else {
                $message = "Sorry, something went wrong";
             }
-
             $username = "";
             $password = "";
             $name = "";
             $surname = "";
             $email = "";
-
         }
     }
-           
-        ?>
+?>
             
 <div id="wrapper">
     <div id="header">
@@ -71,7 +77,7 @@
             </div>
                 <?php } ?>
             
-            <form action="index.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <h2>Name:</h2><br><input class="formExample" placeholder="Name" type="text" value="" name="name" />
                 <br><br>
                 <h2>Surname:</h2><br><input class="formExample" placeholder="Surame" type="text" value="" name="surname" />
