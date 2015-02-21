@@ -19,6 +19,7 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     color: #777777;
+    padding-left: 50px;
 }
 
 h2 {
@@ -28,14 +29,14 @@ h2 {
 }
 
 h3 {
-    font-size: 70px;
+    font-size: 50px;
     color: #ffffff;
     margin-top: -1px;
     margin-left: 60px;
 }
 
 #header {
-    height: 80px;
+    height: 50px;
     width: 100%;
     background-color: #e35a5a;
     top: 0;
@@ -43,23 +44,24 @@ h3 {
 }
 
 #footer {
-    height: 100px;
+    height: 50px;
     width: 100%;
     background-color: #cbcbcb;
-    position: fixed;
     bottom: 0;
-
+    clear: both;
+    margin-top: 50px;
+    position: fixed;
 }
 
 #box {
     width: 600px;
-    height: 320px;
+    height: auto;
     background-color: #ffffff;
     border: 2px solid #ffffff;
     border-radius: 25px;
     margin: 0 auto;
-    margin-top: 200px;
-    text-align: center;
+    margin-top: 100px;
+    text-align: left;
     }
 
 #smallbox {
@@ -67,7 +69,8 @@ h3 {
     height: auto;
     background-color: #ffffff;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    padding-left: 50px;
 }
 
 #smallbox p {
@@ -78,15 +81,19 @@ h3 {
 
 form {
     padding-top: 10px;
+    text-align: left;
+    padding-left: 50px;
+    padding-bottom: 30px;
 }
 
 .formExample {
     color: #000000;
-    border: 1px solid #cbcbcb;
-    background-color: #cbcbcb;
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
     width: 200px;
     height: 25px;
     border-radius: 5px;
+    
 }
 
 .buttonExample {
