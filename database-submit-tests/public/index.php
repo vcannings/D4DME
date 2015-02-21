@@ -1,8 +1,14 @@
 <?php require_once("../includes/connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>
- 
-    <?php
+<?php include_once("../includes/templates/header.php"); ?>    
+
+<?php
+            $nameErr = "";
+            $surnameErr = "";            
+            $usernameErr = "";
+            $passwordErr = "";
+            $emailErr = "";
+
         if(isset($_POST["submit"])) {
             $username = ($_POST["username"]);
             $password = ($_POST["password"]);
@@ -18,33 +24,39 @@
         }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $username = refine_input($_POST["username"]);
-      $password = refine_input($_POST["password"]);
       $name = refine_input($_POST["name"]);
       $name = ucfirst($name);
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+        $nameErr = "Only letters and white space allowed";
+        }
       $surname = refine_input($_POST["surname"]);
       $surname = ucfirst($surname);
+         if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
+        $surnameErr = "Only letters and white space allowed";
+        }
+      $username = refine_input($_POST["username"]);
+      $password = refine_input($_POST["password"]);
       $email = refine_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $emailErr = "Invalid email format"; 
+        }
     }
-    ?>
-
-<?php
-         $message = "Welcome to this generic site";
     ?>
     
 <?php
+
     if(isset($_POST["submit"])) {
 
-        if(empty($username)) {
-            $message = "Please enter a username";
-        } else if(empty($password)) {
-            $message = "Please enter a password";
-        } else if(empty($name)) {
-            $message = "Please enter your name";
+        if(empty($name)) {
+            $nameErr = "Name is required";
         } else if(empty($surname)) {
-            $message = "Please enter your surname";
+            $surnameErr = "Surname is required";
+        } else if(empty($username)) {
+            $usernameErr = "Username is required";
+        } else if(empty($password)) {
+            $passwordErr = "Password is required";
         } else if(empty($email)) {
-            $message = "Please enter your email";
+            $emailErr = "Email is required";
         } else { 
             $query = "INSERT INTO user (user_username, user_password, user_name, user_surname, user_email) VALUES ('{$username}', '{$password}', '{$name}', '{$surname}', '{$email}')";
             $result = mysqli_query($connection, $query);
@@ -71,22 +83,21 @@
             <h1>Sign Up</h1>
             <hr>
             
-                <?php if(isset($message)) { ?>
             <div id="smallbox">
-                <p><?php echo $message; ?></p>
+                <p>* required field</p>
             </div>
-                <?php } ?>
             
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                <h2>Name:</h2><br><input class="formExample" placeholder="Name" type="text" value="" name="name" />
-                <br><br>
-                <h2>Surname:</h2><br><input class="formExample" placeholder="Surame" type="text" value="" name="surname" />
-                <br><br>
-                <h2>Username:</h2><br><input class="formExample" placeholder="Username" type="text" value="" name="username" />
-                <br><br>
-                <h2>Password:</h2><br><input class="formExample" placeholder="Password" type="text" value="" name="password" />
-                <br><br>
-                <h2>Email Address:</h2><br><input class="formExample" placeholder="Email" type="text" value="" name="email" />
+                <h2>Name:</h2><input class="formExample" placeholder="Name" type="text" value="<?php echo $name;?>" name="name" />
+                <span class="error">* <?php echo $nameErr;?></span>
+                <h2>Surname:</h2><input class="formExample" placeholder="Surname" type="text" value="<?php echo $surname;?>" name="surname" />
+                <span class="error">* <?php echo $surnameErr; ?></span>
+                <h2>Username:</h2><input class="formExample" placeholder="Username" type="text" value="<?php echo $username;?>" name="username" />
+                <span class="error">* <?php echo $usernameErr; ?></span>
+                <h2>Password:</h2><input class="formExample" placeholder="Password" type="text" value="<?php echo $password;?>" name="password" />
+                <span class="error">* <?php echo $passwordErr; ?></span>
+                <h2>Email Address:</h2><input class="formExample" placeholder="Email" type="text" value="<?php echo $name;?>" name="email" />
+                <span class="error">* <?php echo $emailErr; ?></span>
                 <br><br>
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
             </form>

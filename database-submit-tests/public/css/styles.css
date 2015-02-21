@@ -15,6 +15,12 @@ p {
     color: #000000;
 }
 
+.error {
+    color: #e35a5a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 h1 {
     font-size: 40px;
     font-weight: bold;
@@ -23,8 +29,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
-    display: inline;
+    font-size: 16px;
     color: #777777;
 }
 
@@ -50,7 +55,6 @@ h3 {
     bottom: 0;
     clear: both;
     margin-top: 50px;
-    position: fixed;
 }
 
 #box {
