@@ -20,8 +20,7 @@
                 <hr>
                 <img src="chace.jpg" class="smallphoto">
                 <h2>Bio:</h2> 
-                <p>Lorem ipsum dolor sit amet, qui ne fabulas delenit, mel id porro numquam. Vitae adipiscing ut pro, et habeo detracto similique vix, bonorum luptatum an sea. Munere verterem nominati eu mei, prima option inermis mei no. Est te stet appellantur consequuntur, suscipit instructior ea vix. His nusquam periculis ad, has postea omittam ea, mei eu epicurei atomorum.Eam aeterno virtute ea. Regione aperiri mel no, debitis incorrupte cu sed. Semper eruditi vituperata vim at, ei alienum tincidunt vim. Cu eam homero utamur.
-    Lorem ipsum dolor sit amet, qui ne fabulas delenit, mel id porro numquam. Vitae adipiscing ut pro, et habeo detracto similique vix, bonorum luptatum an sea. Munere verterem nominati eu mei, prima option inermis mei no. Est te stet appellantur consequuntur, suscipit instructior ea vix. His nusquam periculis ad, has postea omittam ea, mei eu epicurei atomorum.Eam aeterno virtute ea. Regione aperiri mel no, debitis incorrupte cu sed. Semper eruditi vituperata vim at, ei alienum tincidunt vim. Cu eam homero utamur.</p>
+                <p>Hello, I’m Chace and I’ve come from London to study Digital Media Design at Bournemouth University. I’ve chosen this course due to the diverse range of resource and learning it has to offer. I believe this course is the ideal platform for me to understand what part of design I enjoy most and that it will take me one step closer to achieving my dream of becoming successful designer. My current Unit has asked me to collaborate with other members of the course in order to create a web app. Over the next few weeks, I will be working with them closely in order to achieve our goals of building a successful web app.</p>
                 <a  class="button" href="https://chaceteera.wordpress.com" target="_blank">BLOG</a>
             </div>
             <div class="bigbox">
