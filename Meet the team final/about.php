@@ -16,7 +16,7 @@
                 <h1>ABOUT</h1>
             </div>
             <div class="bigbox">
-                <h3>CHACE</h3>
+                <h3 a id="cabout">CHACE</h3>
                 <hr>
                 <img src="chace.jpg" class="smallphoto">
                 <h2>Bio:</h2> 
@@ -24,7 +24,7 @@
                 <a  class="button" href="https://chaceteera.wordpress.com" target="_blank">BLOG</a>
             </div>
             <div class="bigbox">
-                <h3>VERITY</h3> 
+                <h3 a id="vabout">VERITY</h3> 
                 <hr>
                 <img src="verity.jpg" class="smallphoto">
                 <h2>Bio:</h2> 
@@ -32,7 +32,7 @@
                 <a  class="button" href="https://vershmer.wordpress.com" target="_blank">BLOG</a>
             </div>
             <div class="bigbox">
-                <h3>KYLE</h3>
+                <h3 a id="kabout">KYLE</h3>
                 <hr>
                 <img src="kyle.jpg" class="smallphoto"> 
                 <h2>Bio:</h2>
@@ -40,7 +40,7 @@
     Lorem ipsum dolor sit amet, qui ne fabulas delenit, mel id porro numquam. Vitae adipiscing ut pro, et habeo detracto similique vix, bonorum luptatum an sea. Munere verterem nominati eu mei, prima option inermis mei no. Est te stet appellantur consequuntur, suscipit instructior ea vix. His nusquam periculis ad, has postea omittam ea, mei eu epicurei atomorum.Eam aeterno virtute ea. Regione aperiri mel no, debitis incorrupte cu sed. Semper eruditi vituperata vim at, ei alienum tincidunt vim. Cu eam homero utamur.</p>
                 <a  class="button" href="https://kjenkins95.wordpress.com" target="_blank">BLOG</a>
             </div>
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
             <div id="footer">
             </div>
