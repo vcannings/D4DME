@@ -4,6 +4,9 @@
 <?php include_once("../includes/templates/header.php"); ?>    
 
 <?php
+
+    $x = 1;
+
 //initial defining of variables used on this page
     $nameErr = "";
     $surnameErr = "";            
@@ -31,18 +34,21 @@
         $name = refine_input($_POST["name"]);
         $name = ucfirst($name);
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-        $nameErr = "Only letters and white space allowed";
+            $nameErr = "Only letters and white space allowed";
+            $x = 0;
         }
         $surname = refine_input($_POST["surname"]);
         $surname = ucfirst($surname);
          if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
-        $surnameErr = "Only letters and white space allowed";
+            $surnameErr = "Only letters and white space allowed";
+             $x = 0;
         }
         $username = refine_input($_POST["username"]);
         $password = refine_input($_POST["password"]);
         $email = refine_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format"; 
+            $emailErr = "Invalid email format"; 
+            $x = 0;
         }
     }
 ?>
@@ -61,7 +67,7 @@
             $passwordErr = "Password is required";
         } else if(empty($email)) {
             $emailErr = "Email is required";
-        } else { 
+        } else if($x == 1) { 
             $query = "INSERT INTO user (user_username, user_password, user_name, user_surname, user_email) VALUES ('{$username}',               '{$password}', '{$name}', '{$surname}', '{$email}')";
             $result = mysqli_query($connection, $query);
 
