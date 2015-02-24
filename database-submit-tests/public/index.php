@@ -8,6 +8,7 @@
             $usernameErr = "";
             $passwordErr = "";
             $emailErr = "";
+            $message = "* required field";
 
         if(isset($_POST["submit"])) {
             $username = ($_POST["username"]);
@@ -83,9 +84,13 @@
             <h1>Sign Up</h1>
             <hr>
             
-            <div id="smallbox">
-                <p>* required field</p>
-            </div>
+                
+                <?php if(isset($message)) { ?>
+                <div id="smallbox">
+                <p><?php echo $message; ?></p>
+                </div>
+               <?php } ?>
+           
             
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <h2>Name:</h2><input class="formExample" placeholder="Name" type="text" value="<?php echo $name;?>" name="name" />
