@@ -96,7 +96,7 @@
                 <span class="error">* <?php echo $usernameErr; ?></span>
                 <h2>Password:</h2><input class="formExample" placeholder="Password" type="text" value="<?php echo $password;?>" name="password" />
                 <span class="error">* <?php echo $passwordErr; ?></span>
-                <h2>Email Address:</h2><input class="formExample" placeholder="Email" type="text" value="<?php echo $name;?>" name="email" />
+                <h2>Email Address:</h2><input class="formExample" placeholder="Email" type="text" value="<?php echo $email;?>" name="email" />
                 <span class="error">* <?php echo $emailErr; ?></span>
                 <br><br>
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
