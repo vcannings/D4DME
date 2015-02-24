@@ -1,51 +1,54 @@
+<!-- Including several files into the index file -->
 <?php require_once("../includes/connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include_once("../includes/templates/header.php"); ?>    
 
 <?php
-            $nameErr = "";
-            $surnameErr = "";            
-            $usernameErr = "";
-            $passwordErr = "";
-            $emailErr = "";
-            $message = "* required field";
+//initial defining of variables used on this page
+    $nameErr = "";
+    $surnameErr = "";            
+    $usernameErr = "";
+    $passwordErr = "";
+    $emailErr = "";
+    $message = "* required field";
 
-        if(isset($_POST["submit"])) {
-            $username = ($_POST["username"]);
-            $password = ($_POST["password"]);
-            $name = ($_POST["name"]);
-            $surname = ($_POST["surname"]);
-            $email = ($_POST["email"]);
-        } else {
-            $username = "";
-            $password = "";
-            $name = "";
-            $surname = "";
-            $email = "";
-        }
+    if(isset($_POST["submit"])) {
+        $username = ($_POST["username"]);
+        $password = ($_POST["password"]);
+        $name = ($_POST["name"]);
+        $surname = ($_POST["surname"]);
+        $email = ($_POST["email"]);
+    } else {
+        $username = "";
+        $password = "";
+        $name = "";
+        $surname = "";
+        $email = "";
+    }
 
+//validating the inputted data using a custom function and a few php functions
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $name = refine_input($_POST["name"]);
-      $name = ucfirst($name);
+        $name = refine_input($_POST["name"]);
+        $name = ucfirst($name);
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
         $nameErr = "Only letters and white space allowed";
         }
-      $surname = refine_input($_POST["surname"]);
-      $surname = ucfirst($surname);
+        $surname = refine_input($_POST["surname"]);
+        $surname = ucfirst($surname);
          if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
         $surnameErr = "Only letters and white space allowed";
         }
-      $username = refine_input($_POST["username"]);
-      $password = refine_input($_POST["password"]);
-      $email = refine_input($_POST["email"]);
+        $username = refine_input($_POST["username"]);
+        $password = refine_input($_POST["password"]);
+        $email = refine_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  $emailErr = "Invalid email format"; 
+        $emailErr = "Invalid email format"; 
         }
     }
-    ?>
+?>
     
 <?php
-
+//testing to see whether the entry fields are empty, if so not allowing them to be submitted to database table
     if(isset($_POST["submit"])) {
 
         if(empty($name)) {
@@ -59,7 +62,7 @@
         } else if(empty($email)) {
             $emailErr = "Email is required";
         } else { 
-            $query = "INSERT INTO user (user_username, user_password, user_name, user_surname, user_email) VALUES ('{$username}', '{$password}', '{$name}', '{$surname}', '{$email}')";
+            $query = "INSERT INTO user (user_username, user_password, user_name, user_surname, user_email) VALUES ('{$username}',               '{$password}', '{$name}', '{$surname}', '{$email}')";
             $result = mysqli_query($connection, $query);
 
             if($result) {
@@ -79,19 +82,18 @@
 <div id="wrapper">
     <div id="header">
         <h3>WEBSITE</h3>
-        </div>
-        <div id="box">
+    </div>
+    <div id="box">
             <h1>Sign Up</h1>
             <hr>
             
-                
+<!-- displaying whatever the message variable happens to be at the given time -->
                 <?php if(isset($message)) { ?>
                 <div id="smallbox">
                 <p><?php echo $message; ?></p>
                 </div>
                <?php } ?>
            
-            
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <h2>Name:</h2><input class="formExample" placeholder="Name" type="text" value="<?php echo $name;?>" name="name" />
                 <span class="error">* <?php echo $nameErr;?></span>
@@ -106,9 +108,9 @@
                 <br><br>
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
             </form>
-        </div>
-            <div id="footer">
-            </div>
+    </div>
+    <div id="footer">
+    </div>
  </div>
 
 
