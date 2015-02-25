@@ -4,10 +4,8 @@
 <?php include_once("../includes/templates/header.php"); ?>    
 
 <?php
-
-    $x = 1;
-
 //initial defining of variables used on this page
+    $x = 1;
     $nameErr = "";
     $surnameErr = "";            
     $usernameErr = "";
