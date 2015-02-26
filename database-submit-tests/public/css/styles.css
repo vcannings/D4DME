@@ -54,7 +54,6 @@ h3 {
     background-color: #cbcbcb;
     bottom: 0;
     margin-top: 50px;
-    position: fixed;
 }
 
 #box {
@@ -94,8 +93,6 @@ form {
     color: #000000;
     border: 1px solid #eaeaea;
     background-color: #eaeaea;
-    width: 200px;
-    height: 25px;
     border-radius: 5px;
     
 }
