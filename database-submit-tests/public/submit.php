@@ -1,10 +1,11 @@
-<!-- Including several files into the index file -->
+<!-- V: The php on this page is virtually the same as the index php, it's just a slightly different form -->
+<!-- V: Including several files into the index file -->
 <?php require_once("../includes/connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include_once("../includes/templates/header.php"); ?>    
 
 <?php
-//initial defining of variables used on this page
+// V: initial defining of variables used on this page
     $x = 1;
     $titleErr = "";
     $cooktimeErr = "";            
@@ -30,7 +31,7 @@
         $instructions = "";
     }
 
-//validating the inputted data using a custom function and a few php functions
+// V: validating the inputted data using a custom function and a few php functions
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $title = ucfirst($title);
         }
@@ -39,7 +40,7 @@
 ?>
     
 <?php
-//testing to see whether the entry fields are empty, if so not allowing them to be submitted to database table
+// V: testing to see whether the entry fields are empty, if so not allowing them to be submitted to database table
     if(isset($_POST["submit"])) {
 
         if(empty($title)) {
@@ -78,10 +79,10 @@
         <h3>WEBSITE</h3>
     </div>
     <div id="box">
-            <h1>Sign Up</h1>
+            <h1>Submit</h1>
             <hr>
             
-<!-- displaying whatever the message variable happens to be at the given time -->
+<!-- V: displaying whatever the message variable happens to be at the given time -->
                 <?php if(isset($message)) { ?>
                 <div id="smallbox">
                 <p><?php echo $message; ?></p>
