@@ -6,7 +6,7 @@
 <div id="wrapper">
     <div id="header">
         <h3>WEBSITE</h3>
-    </div>
+    </div><br><br><br><br>
     
     <?php
     $query = "SELECT * FROM recipe";

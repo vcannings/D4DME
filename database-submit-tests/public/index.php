@@ -87,7 +87,7 @@
 <div id="wrapper">
     <div id="header">
         <h3>WEBSITE</h3>
-    </div>
+    </div><br><br><br><br>
     <div id="box">
             <h1>Sign Up</h1>
             <hr>

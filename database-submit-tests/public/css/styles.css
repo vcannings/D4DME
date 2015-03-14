@@ -30,7 +30,8 @@ p {
     border: 2px solid #ffffff;
     border-radius: 25px;
     margin: 0 auto;
-    margin-top: 100px;
+    clear: both;
+    margin-bottom: 10px;
     text-align: left;
     overflow: hidden;
     display: inline-block;
@@ -110,7 +111,6 @@ h3 {
     border: 2px solid #ffffff;
     border-radius: 25px;
     margin: 0 auto;
-    margin-top: 100px;
     text-align: left;
     }
 
