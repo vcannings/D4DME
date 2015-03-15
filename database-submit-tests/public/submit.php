@@ -11,6 +11,7 @@
     $cooktimeErr = "";            
     $cultureErr = "";
     $allergyErr = "";
+    $descriptionErr = "";
     $ingredientsErr = "";
     $instructionsErr = "";
     $message = "* required field";
@@ -20,6 +21,7 @@
         $cooktime = ($_POST["recipe_cooktime"]);
         $culture = ($_POST["recipe_culture"]);
         $allergy = ($_POST["recipe_allergy"]);
+        $description = ($_POST["recipe_description"]);
         $ingredients = ($_POST["recipe_ingredients"]);
         $instructions = ($_POST["recipe_instructions"]);
     } else {
@@ -27,6 +29,7 @@
         $cooktime = "";
         $culture = "";
         $allergy = "";
+        $description = "";
         $ingredients = "";
         $instructions = "";
     }
@@ -51,12 +54,14 @@
             $cultureErr = "Culture is required";
         } else if(empty($allergy)) {
             $allergyErr = "Allergy warning is required";
+        } else if(empty($description)) {
+            $descriptionErr = "Description is required";
         } else if(empty($ingredients)) {
             $ingredientsErr = "Ingredients are required";
         } else if(empty($instructions)) {
             $instructionsErr = "Instructions are required";
         } else if($x == 1) { 
-            $query = "INSERT INTO recipe (recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_ingredients, recipe_instructions) VALUES ('{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$ingredients}', '{$instructions}')";
+            $query = "INSERT INTO recipe (recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_description, recipe_ingredients, recipe_instructions) VALUES ('{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$description}', '{$ingredients}', '{$instructions}')";
             $result = mysqli_query($connection, $query);
 
             if($result) {
@@ -70,6 +75,7 @@
             $allergy = "";
             $ingredients = "";
             $instructions = "";
+            $description = "";
         }
     }
 ?>
@@ -108,7 +114,7 @@
                 <option value="60 minutes +">60 minutes +</option>
                 </select>
                 <span class="error">* <?php echo $cooktimeErr; ?></span>
-                <h2>Culture:</h2><select name="recipe_culture">
+                <h2>Cuisine:</h2><select name="recipe_culture">
                 <option value="American">American</option>
                 <option value="British">British</option>
                 <option value="Chinese">Chinese</option>
@@ -128,6 +134,8 @@
                 <option value="no">No</option>
                 </select>
                 <span class="error">* <?php echo $allergyErr; ?></span>
+                <h2>Description:</h2><textarea rows="3" cols="40" class="formExample" placeholder="This creamy pasta bake takes no time at all to cook with very few ingredients!" value="<?php echo $description;?>" name="recipe_description"></textarea>
+                <span class="error">* <?php echo $descriptionErr; ?></span>
                 <h2>Ingredients:</h2><textarea rows="3" cols="40" class="formExample" placeholder="Ingredient one, ingredient two..." value="<?php echo $ingredients;?>" name="recipe_ingredients"></textarea>
                 <span class="error">* <?php echo $ingredientsErr; ?></span>
                 <h2>Instructions:</h2><textarea rows="8" cols="40" class="formExample" placeholder="1) instruction,  2) instruction..." value="<?php echo $instructions;?>" name="recipe_instructions"></textarea>
