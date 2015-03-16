@@ -10,24 +10,24 @@
     </div><br><br><br><br>
     <div id="container">
     <?php
-	        if(isset($_GET["cuisine"])) {
-		        $query = "SELECT * FROM recipe WHERE recipe_culture LIKE '%{$_GET["cuisine"]}%'";
-	        } else if(isset($_GET["ingredient"])) {
+	        if(isset($_GET["cuisine"])) { // V: If the cusine search has been pressed, select all that match the search for the cuisine column
+		        $query = "SELECT * FROM recipe WHERE recipe_culture LIKE '%{$_GET["cuisine"]}%'"; 
+	        } else if(isset($_GET["ingredient"])) { // V: If the ingredients search has been pressed, select all that match the search for the ingredients column
 				$query = "SELECT * FROM recipe WHERE recipe_ingredients LIKE '%{$_GET["ingredient"]}%'";
-            } else if(isset($_GET["allergy"])) {
+            } else if(isset($_GET["allergy"])) { // V: If the allergy search has been pressed, select all that match the search for the allergy column
 				$query = "SELECT * FROM recipe WHERE recipe_allergy LIKE '%{$_GET["allergy"]}%'";
-            } else if(isset($_GET["cooktime"])) {
+            } else if(isset($_GET["cooktime"])) { // V: If the cooktime search has been pressed, select all that match the search for the cooktime column
 				$query = "SELECT * FROM recipe WHERE recipe_cooktime LIKE '%{$_GET["cooktime"]}%'";
-	        } else {
+	        } else { // V: Otherwise display all recipes
 		        $query = "SELECT * FROM recipe"; // V: The query is selecting all the data from the recipe table
 	        }
 
 			$result = mysqli_query($connection, $query);// V: defining the variable result by putting our connection variable and our query variable through a function
-			if(!$result) {
+			if(!$result) { // V: If the query doesn't work, kill the connection and feedback to user
 				die("Database query failed.");
 			}
 
-		    while($row = mysqli_fetch_assoc($result)) {
+		    while($row = mysqli_fetch_assoc($result)) { // V: whilst our query works, include recipe.php to display data
 		    	include 'recipe.php';
 		    }
         ?>
