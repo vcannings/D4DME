@@ -19,10 +19,28 @@
                 }
 
             ?>
+        
+        <?php
+        if(isset($_GET["cuisine"])) {
+        $query  = "SELECT * FROM recipe WHERE recipe_culture LIKE '%{$_GET["cuisine"]}%' ORDER BY id DESC";
+        $result = mysqli_query($connection, $query);
+        while($row = mysqli_fetch_assoc($result)) {
+           include 'recipe.php';
+        }
+        }
+        
+        ?>
+        
     </div>
     
 <div id="search-bar">
-
+    <h2>Find a recipe</h2>
+    <hr>
+  <form method="get" name="cuisine" action="index.php">
+      <label>Cuisine</label>
+      <input type="text" class="tftextinput" name="q" size="21" maxlength="120">
+      <input type="submit" value="Search">
+    </form>
 </div>
 
     <div id="footer">
