@@ -5,9 +5,9 @@
 <?php include_once("../includes/templates/header.php"); ?>    
 
 <?php
-// V: initial defining of variables used on this page
+// V: initial defining of variables used on this page, all set to equal nothing unless the submit button has been hit and the user has input data
     $x = 1;
-    $titleErr = "";
+    $titleErr = ""; // V: Individual error messages for each variable (Err is just short for error)
     $cooktimeErr = "";            
     $cultureErr = "";
     $allergyErr = "";
@@ -16,7 +16,7 @@
     $instructionsErr = "";
     $message = "* required field";
 
-    if(isset($_POST["submit"])) {
+    if(isset($_POST["submit"])) { // V: This is basically saying if the submit button has been pressed, make whatever has been put into the relevent fields equal these variables
         $title = ($_POST["recipe_title"]);
         $cooktime = ($_POST["recipe_cooktime"]);
         $culture = ($_POST["recipe_culture"]);
@@ -24,7 +24,7 @@
         $description = ($_POST["recipe_description"]);
         $ingredients = ($_POST["recipe_ingredients"]);
         $instructions = ($_POST["recipe_instructions"]);
-    } else {
+    } else { // V: otherwise it will set the variables to equal nothing
         $title = "";
         $cooktime = "";
         $culture = "";
@@ -35,10 +35,10 @@
     }
 
 // V: validating the inputted data using a custom function and a few php functions
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $title = ucfirst($title);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { // V: this line is saying if the method of inputting data is post, initiae this function
+        $title = ucfirst($title); // V: ucfirst will edit the inputted data variable in the brackets to have a capital letter at the start
         }
-        $culture = refine_input($_POST["recipe_culture"]);
+        $culture = refine_input($_POST["recipe_culture"]); // V: Refine input is the custom function I created. See functions.php for more details
         $culture = ucfirst($culture);   
 ?>
     
@@ -47,7 +47,7 @@
     if(isset($_POST["submit"])) {
 
         if(empty($title)) {
-            $titleErr = "Title is required";
+            $titleErr = "Title is required"; // V: if a field in the form is left blank, the error variables are given a value
         } else if(empty($cooktime)) {
             $cooktimeErr = "Cook time is required";
         } else if(empty($culture)) {
@@ -62,14 +62,14 @@
             $instructionsErr = "Instructions are required";
         } else if($x == 1) { 
             $query = "INSERT INTO recipe (recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_description, recipe_ingredients, recipe_instructions) VALUES ('{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$description}', '{$ingredients}', '{$instructions}')";
-            $result = mysqli_query($connection, $query);
+            $result = mysqli_query($connection, $query); // V: This SQL query is asked to insert our variables (created by the user) into the relevent collums in our 'user' table if all of the above requirements have been met
 
-            if($result) {
+            if($result) { // V: If the result is successful/unsuccessful, feedback to the user
                $message = "Thank you, your recipe has been added!";
             } else {
                $message = "Sorry, something went wrong";
             }
-            $title = "";
+            $title = ""; // V: The variables are set back to equal nothing if the data has been successfully sent to the table in the database
             $cooktime = "";
             $culture = "";
             $allergy = "";
@@ -94,10 +94,12 @@
                 <p><?php echo $message; ?></p>
                 </div>
                <?php } ?>
-           
+<!-- V: The php below in the form is a security check to make sure that hackers cannot inject SQL into our website via the URL by removing any special characters such as HTML tags by turning them into other things  -->            
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <!-- V: If the user have input data into the fields, but something has gone wrong, the data will still be there when the page refreshes because of the php in the value atributes -->
                 <h2>Title:</h2><input class="formExample" placeholder="e.g Pasta Bake" type="text" value="<?php echo $title;?>" name="recipe_title" />
                 <span class="error">* <?php echo $titleErr;?></span>
+                <!-- V: The error variables have been set to echo if they have a value -->
                 <h2>Cook Time:</h2><select name="recipe_cooktime">
                 <option value="5 minutes">5 minutes</option>
                 <option value="10 minutes">10 minutes</option>
