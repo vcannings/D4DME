@@ -13,26 +13,20 @@
         
         $result = mysqli_query($connection, $query);
         
-        if($user = mysqli_fetch_assoc($result)){
+        if($result){
             $_SESSION["message"] = "Success, Welcome back {$user["username"]}";
             $_SESSION["username"] = $user["username"];
             $_SESSION["user_id"] = $user["id"];
+            redirectTo("index.php");
         } else{
             $_SESSION["message"] = "Wrong username/password";
         }
         
         echo "<br/><a href='logout.php>Logout</a>";
-        redirectTo("index.php");
+       
     } 
  ?>
 
-<?php 
-    if(isset($_POST["Submit"])) {
-        if(empty($username)) {
-            $message = "Invalid username";
-        }
-    }
-?>
 
 <!doctype html>
 <html>
