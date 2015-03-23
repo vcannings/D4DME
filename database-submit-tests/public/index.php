@@ -7,6 +7,8 @@
     <div id="header">
         <h3>WEBSITE</h3>
         <a href="signup.php" class="buttonExample" style="float: right;">Sign Up</a>
+        <br>
+        <a href="login.php" class="buttonExample" style="float: right"> Log In</a>
     </div><br><br><br><br>
     <div id="container">
     <?php
