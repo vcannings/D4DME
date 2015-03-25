@@ -38,11 +38,7 @@
         <div class="container">
 
             <div class="box">
-                <?php
-                    if(isset($message)) {
-                        echo $message;
-                    }
-                ?>
+                <p><?php echo message(); ?></p>
             </div>
 
             <form action="login.php" method="post">
