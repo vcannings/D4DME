@@ -1,5 +1,6 @@
 <!-- V: The php on this page is virtually the same as the index php, it's just a slightly different form -->
 <!-- V: Including several files into the index file -->
+<?php include_once("../includes/session.php"); ?>
 <?php require_once("../includes/connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include_once("../includes/templates/header.php"); ?>    
