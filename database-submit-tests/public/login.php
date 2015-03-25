@@ -2,7 +2,6 @@
     require_once("../includes/session.php");
     require_once("../includes/connect.php");
     require_once("../includes/functions.php");
-    require_once("../includes/session.php");
  ?>
 
   <?php
@@ -23,6 +22,7 @@
         } else { /*however if the username and password dont match let the user know they there havent logged in*/
             $_SESSION["message"] = "Sorry, wrong username/password.";
         }
+	
 	}
 
  ?>
@@ -38,7 +38,11 @@
         <div class="container">
 
             <div class="box">
-                <p><?php echo message(); ?></p>
+                <?php
+                    if(isset($message)) {
+                        echo $message;
+                    }
+                ?>
             </div>
 
             <form action="login.php" method="post">
