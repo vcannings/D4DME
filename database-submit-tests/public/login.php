@@ -2,6 +2,7 @@
     require_once("../includes/session.php");
     require_once("../includes/connect.php");
     require_once("../includes/functions.php");
+    require_once("../includes/session.php");
  ?>
 
   <?php
@@ -16,11 +17,12 @@
 		if($user = mysqli_fetch_assoc($result)) { /*K: if the given username and */
             $_SESSION["user"] = $user["user_username"];/*password start a session*/
             $_SESSION["user_id"] = $user["user_id"];/*that uses the username an id*/
-            $_SESSION["message"] = "Successfully logged in. Welcome back {$user["user_username"]}.";/*and show a message so the user knows that they are logged in*/
+            $_SESSION["message"] = "Successfully logged in. Welcome back {$user["user_username"]}.";
+            redirectTo("index.php");
+            /*and show a message so the user knows that they are logged in*/
         } else { /*however if the username and password dont match let the user know they there havent logged in*/
             $_SESSION["message"] = "Sorry, wrong username/password.";
         }
-		redirectTo("index.php");
 	}
 
  ?>
@@ -36,11 +38,7 @@
         <div class="container">
 
             <div class="box">
-                <?php
-                    if(isset($message)) {
-                        echo $message;
-                    }
-                ?>
+                <p><?php echo message(); ?></p>
             </div>
 
             <form action="login.php" method="post">

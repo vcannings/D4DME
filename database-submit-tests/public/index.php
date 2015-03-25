@@ -15,6 +15,7 @@
 	<?php } ?>
 		
     </div><br><br><br><br>
+<p><?php echo message(); ?></p>
     <div id="container">
     <?php
 	        if(isset($_GET["cuisine"])) { // V: If the cusine search has been pressed, select all that match the search for the cuisine column

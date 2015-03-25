@@ -7,4 +7,4 @@
         <link href="css/styles.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-    <?php echo message(); ?>
+    
