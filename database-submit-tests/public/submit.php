@@ -16,8 +16,6 @@
     $ingredientsErr = "";
     $instructionsErr = "";
     $imageErr = "";
-    $message = "* required field";
-
     if(isset($_POST["submit"])) { // V: This is basically saying if the submit button has been pressed, make whatever has been put into the relevent fields equal these variables
         $title = ($_POST["recipe_title"]);
         $cooktime = ($_POST["recipe_cooktime"]);
@@ -37,7 +35,6 @@
         $instructions = "";
         $image = "";
     }
-
 // V: validating the inputted data using a custom function and a few php functions
     if ($_SERVER["REQUEST_METHOD"] == "POST") { // V: this line is saying if the method of inputting data is post, initiae this function
         $title = ucfirst($title); // V: ucfirst will edit the inputted data variable in the brackets to have a capital letter at the start
@@ -49,7 +46,6 @@
 <?php
 // V: testing to see whether the entry fields are empty, if so not allowing them to be submitted to database table
     if(isset($_POST["submit"])) {
-
         if(empty($title)) {
             $titleErr = "Title is required"; // V: if a field in the form is left blank, the error variables are given a value
         } else if(empty($cooktime)) {
@@ -67,9 +63,9 @@
         } else if($x == 1) { 
             $query = "INSERT INTO recipe (recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_description, recipe_ingredients, recipe_instructions, recipe_image) VALUES ('{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$description}', '{$ingredients}', '{$instructions}', '{$image}')";
             $result = mysqli_query($connection, $query); // V: This SQL query is asked to insert our variables (created by the user) into the relevent collums in our 'user' table if all of the above requirements have been met
-
             if($result) { // V: If the result is successful/unsuccessful, feedback to the user
                $message = "Thank you, your recipe has been added!";
+                redirectTo("index.php");
             } else {
                $message = "Sorry, something went wrong";
             }
@@ -156,4 +152,4 @@
  </div>
 
 
-<?php include_once("../includes/templates/footer.php"); ?>      
+<?php include_once("../includes/templates/footer.php"); ?>  
