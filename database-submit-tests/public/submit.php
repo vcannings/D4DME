@@ -15,6 +15,7 @@
     $descriptionErr = "";
     $ingredientsErr = "";
     $instructionsErr = "";
+    $imageErr = "";
     $message = "* required field";
 
     if(isset($_POST["submit"])) { // V: This is basically saying if the submit button has been pressed, make whatever has been put into the relevent fields equal these variables
@@ -25,6 +26,7 @@
         $description = ($_POST["recipe_description"]);
         $ingredients = ($_POST["recipe_ingredients"]);
         $instructions = ($_POST["recipe_instructions"]);
+        $image = ($_POST["recipe_image"]);
     } else { // V: otherwise it will set the variables to equal nothing
         $title = "";
         $cooktime = "";
@@ -33,6 +35,7 @@
         $description = "";
         $ingredients = "";
         $instructions = "";
+        $image = "";
     }
 
 // V: validating the inputted data using a custom function and a few php functions
@@ -77,6 +80,7 @@
             $ingredients = "";
             $instructions = "";
             $description = "";
+            $image = "";
         }
     }
 ?>
@@ -143,6 +147,9 @@
                 <span class="error">* <?php echo $ingredientsErr; ?></span>
                 <h2>Instructions:</h2><textarea rows="8" cols="40" class="formExample" placeholder="1) instruction,  2) instruction..." value="<?php echo $instructions;?>" name="recipe_instructions"></textarea>
                 <span class="error">* <?php echo $instructionsErr; ?></span>
+                <h2>Image:</h2><textarea rows="1" cols="40" class="formExample" placeholder="Insert URL here" value="<?php echo $image;?>" name="recipe_image"></textarea>
+                <span class="error">* <?php echo $imageErr; ?></span>
+                
                 <br><br>
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
             </form>
