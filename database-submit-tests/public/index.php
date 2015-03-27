@@ -10,13 +10,14 @@
         	<a href="logout.php" class="buttonExample" style="float: right;">Logout</a>
         <?php } else { ?>
 		<a href="signup.php" class="buttonExample" style="float: right;">Sign Up</a>
-	        <br>
 	        <a href="login.php" class="buttonExample" style="float: right"> Log In</a>
 	<?php } ?>
 		
     </div><br><br><br><br>
-    <p><?php echo message(); ?></p>
+    <p><?php echo message(); ?></p>    
+    
     <div id="container">
+        
     <?php
 	        if(isset($_GET["cuisine"])) { // V: If the cusine search has been pressed, select all that match the search for the cuisine column
 		        $query = "SELECT * FROM recipe WHERE recipe_culture LIKE '%{$_GET["cuisine"]}%'"; 
@@ -29,12 +30,10 @@
 	        } else { // V: Otherwise display all recipes
 		        $query = "SELECT * FROM recipe"; // V: The query is selecting all the data from the recipe table
 	        }
-
 			$result = mysqli_query($connection, $query);// V: defining the variable result by putting our connection variable and our query variable through a function
 			if(!$result) { // V: If the query doesn't work, kill the connection and feedback to user
 				die("Database query failed.");
 			}
-
 		    while($row = mysqli_fetch_assoc($result)) { // V: whilst our query works, include recipe.php to display data
 		    	include 'recipe.php';
 		    }
@@ -68,13 +67,14 @@
       <input type="submit" value="Search">
     </form>
     <br>
-    
+    <?php if(isset($_SESSION["user"])) { ?>
 <a href="submit.php" class="buttonExample">Submit your own!</a>
-    
+    <?php } else { ?>
+    <?php } ?>
 </div>
 
     <div id="footer">
     </div>
 </div>
 
-<?php include_once("../includes/templates/footer.php"); ?>    
+<?php include_once("../includes/templates/footer.php"); ?>   
