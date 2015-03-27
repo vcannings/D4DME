@@ -125,14 +125,10 @@
                 <option value="American">American</option>
                 <option value="British">British</option>
                 <option value="Chinese">Chinese</option>
-                <option value="French">French</option>
                 <option value="German">German</option>
                 <option value="Italian">Italian</option>
                 <option value="Indian">Indian</option>
                 <option value="Japanese">Japanese</option>
-                <option value="Korean">Korean</option>
-                <option value="Spanish">Spanish</option>
-                <option value="Turkish">Turkish</option>
                 <option value="Other">Other</option>
                 </select>
                 <span class="error">* <?php echo $cultureErr; ?></span>
