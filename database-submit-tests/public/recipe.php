@@ -1,5 +1,7 @@
 <!-- V: This div is included in the index.php page to display each recipe seperately -->
+ 
 <div class="recipe-box">
+        
     <h1><a href="selected_recipe.php?recipe_id=<?php echo ($row["recipe_id"]); ?>"><?php echo ($row["recipe_title"]); ?></a></h1>
         <hr>
 <!-- V: our $row variable was introduced in index.php and is an array of all our table data -->
@@ -19,4 +21,11 @@
     <h2>Allergy warning</h2><br><p><?php echo ($row["recipe_allergy"]); ?></p><br><br><br><br>
     <h2>Description:</h2><br>
     <p><?php echo ($row["recipe_description"]); ?></p>
+    
+    <?php if(isset($_SESSION["user"])) { ?>
+    <?php if ($_SESSION["user_id"]==$row["recipe_user_id"]) {?>
+        <div class="delete_edit" id="delete_recipe"><a href="delete_recipe.php?recipe_id=<?php echo $row["recipe_id"]; ?>" class="buttonExample">Delete?</a></div>
+    <?php } ?>
+    <?php } else { ?>
+    <?php } ?>
 </div>
