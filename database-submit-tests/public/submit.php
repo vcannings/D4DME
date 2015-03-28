@@ -61,7 +61,7 @@
         } else if(empty($instructions)) {
             $instructionsErr = "Instructions are required";
         } else if($x == 1) { 
-            $query = "INSERT INTO recipe (recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_description, recipe_ingredients, recipe_instructions, recipe_image) VALUES ('{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$description}', '{$ingredients}', '{$instructions}', '{$image}')";
+            $query = "INSERT INTO recipe (recipe_user_id, recipe_title, recipe_cooktime, recipe_culture, recipe_allergy, recipe_description, recipe_ingredients, recipe_instructions, recipe_image) VALUES ('{$_SESSION["user_id"]}', '{$title}', '{$cooktime}', '{$culture}', '{$allergy}', '{$description}', '{$ingredients}', '{$instructions}', '{$image}')";
             $result = mysqli_query($connection, $query); // V: This SQL query is asked to insert our variables (created by the user) into the relevent collums in our 'user' table if all of the above requirements have been met
             if($result) { // V: If the result is successful/unsuccessful, feedback to the user
                $message = "Thank you, your recipe has been added!";
