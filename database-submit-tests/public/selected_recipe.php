@@ -33,7 +33,7 @@
             $result = GetSingleRecipe($recipeID);
             
             while($row = mysqli_fetch_assoc($result)) {
-                include 'recipe.php';
+                include 'recipe_large.php';
             }
         ?>
    
