@@ -1,6 +1,6 @@
 <!-- V: This div is included in the index.php page to display each recipe seperately -->
 <div class="recipe-box">
-    <h1><?php echo ($row["recipe_title"]); ?></h1>
+    <h1><a href="selected_recipe.php?recipe_id=<?php echo ($row["recipe_id"]); ?>"><?php echo ($row["recipe_title"]); ?></a></h1>
         <hr>
 <!-- V: our $row variable was introduced in index.php and is an array of all our table data -->
 	<?php
