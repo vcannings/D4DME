@@ -223,10 +223,6 @@ body {
     color: #414141;
 }
 
-.content h1 {
-    padding 5px;
-}
-
 .content p {
     padding 5px;
 }
@@ -245,12 +241,14 @@ body {
     padding: 0px;
     font-size: 1em;
     text-align: center;
+    color: #414141;
 }
 
 .content h2 {
     padding: 0px;
     font-size: 1em;
     text-align: center;
+    color: #414141;
 }
 
 .content p {

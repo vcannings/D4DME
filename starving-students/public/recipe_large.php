@@ -65,7 +65,13 @@
     <p><?php echo ($row["recipe_ingredients"]); ?></p>
     <br><br><br><br>
     <h2>Instructions:</h2><br>
-    <p><?php echo ($row["recipe_instructions"]); ?></p>
+    <p><?php echo ($row["recipe_instructions"]); ?></p><br><br>
+    <?php if(isset($_SESSION["user"])) { ?>
+    <?php if ($_SESSION["user_id"]==$row["recipe_user_id"]) {?>
+        <div class="delete"><a href="delete_recipe.php?recipe_id=<?php echo $row["recipe_id"]; ?>" class="buttonExample">Delete?</a></div>
+    <?php } ?>
+    <?php } else { ?>
+    <?php } ?>
 </div>
 <br><br><br><br><br><br>
 </div>
