@@ -1,7 +1,8 @@
 <!-- V: Including several files into the index file using a php function -->
 <?php require_once("../includes/connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>    
+<?php include_once("../includes/templates/header.php"); ?> 
+        
 
 <?php
 // V: initial defining of variables used on this page, all set to equal nothing unless the submit button has been hit and the user has input data
@@ -79,12 +80,8 @@
         }
     }
 ?>
-            
-<div id="wrapper">
-    <div id="header">
-        <h3>WEBSITE</h3>
-    </div><br><br><br><br>
-    <div id="box">
+  <center>          
+<div class="welcome">
             <h1>Sign Up</h1>
             <hr>
             
@@ -113,9 +110,11 @@
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
             </form>
     </div>
+      </center>
     <div id="footer">
     </div>
+            <?php include_once("../includes/templates/footer.php"); ?> 
  </div>
 
 
-<?php include_once("../includes/templates/footer.php"); ?>       
+     

@@ -49,7 +49,7 @@
             } else if(isset($_GET["cooktime"])) { // V: If the cooktime search has been pressed, select all that match the search for the cooktime column
 				$query = "SELECT * FROM recipe WHERE recipe_cooktime LIKE '%{$_GET["cooktime"]}%'";
 	        } else { // V: Otherwise display all recipes
-		        $query = "SELECT * FROM recipe"; // V: The query is selecting all the data from the recipe table
+		        $query = "SELECT * FROM recipe WHERE recipe_user_id = '{$_SESSION['user_id']}'"; // V: The query is selecting all the data from the recipe table
 	        }
 			$result = mysqli_query($connection, $query);// V: defining the variable result by putting our connection variable and our query variable through a function
 			if(!$result) { // V: If the query doesn't work, kill the connection and feedback to user

@@ -105,6 +105,11 @@ body {
     color: #414141;
 }
 
+.welcome h2 {
+    font-size: 20px;
+    color: #414141;
+}
+
 .welcome p {
     font-size: 20px;
     color: #414141;

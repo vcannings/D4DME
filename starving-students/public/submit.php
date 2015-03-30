@@ -75,11 +75,8 @@
     }
 ?>
             
-<div id="wrapper">
-    <div id="header">
-        <h3>WEBSITE</h3>
-    </div><br><br><br><br>
-    <div id="box">
+<center>          
+<div class="welcome">
             <h1>Submit</h1>
             <hr>
             
