@@ -1,5 +1,5 @@
-IMPORTANT!
+<h1>IMPORTANT!</h1>
 
-The final website code can be found under 'starving-students'.
+The <strong>final website code</strong> can be found under 'starving-students'.
 
-If you are looking for the developed php over time (before the css was implimented) go to 'database-submit-tests'.
+If you are looking for the <strong>developed php over time</strong> (before the css was implimented) go to 'database-submit-tests'.
