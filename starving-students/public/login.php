@@ -1,8 +1,29 @@
-<?php
-    require_once("../includes/session.php");
-    require_once("../includes/connect.php");
-    require_once("../includes/functions.php");
- ?>
+<?php require_once("../includes/connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
+<?php include_once("../includes/templates/header.php"); ?> 
+<div class="container">
+            <div class="header">
+                <div class="logo">
+                      <img src="images/Logo.png">
+                </div>
+                <div class="title">
+                    <h1>STARVING STUDENTS</h1>
+                    <img src="images/chalk-boarder.png">
+                </div>
+                <div class="menu-glyph">
+                    <img src="images/chalk-boarder.png"/>
+                </div>
+            </div>
+            <div class="nav-bar-left">
+                <ul>
+                    <li><a href="home.php">About</a></li>
+                    <li><a href="index.php">Menu</a></li>
+                </ul>
+            </div>
+            
+            <div id="message">
+            <p><?php echo message(); ?></p>
+            </div>
 
   <?php
     if(isset($_POST["submit"])){/*K: if the post is told to submit then..*/
@@ -22,26 +43,17 @@
 	
 	}
  ?>
-
-<!doctype html>
-<html>
-    <head>
-        <title>Format Code</title>
-        <link href="css/styles.css" rel="stylesheet" >
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div class="box">
-                <p><?php echo message(); ?></p>
-            </div>
-
+<br><br><br><br>
+<center>
+<div class="welcome">
             <form action="login.php" method="post">
-                username: <input type="text" name="username" value="" />
-                password: <input type="text" name="password" value="" />
+                <strong>Username:</strong> <input type="text" name="username" value="" /><br><br>
+                <strong>Password:</strong> <input type="text" name="password" value="" /><br><br>
                 <input type="submit" name="submit" value="Submit" />
             </form>
+    </div>
+    </center>
+    
         </div>
     </body>
 </html>

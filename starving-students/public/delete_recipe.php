@@ -8,9 +8,10 @@
         $userID = $_SESSION["user_id"];
         
         $query = "DELETE FROM recipe WHERE recipe_id = '{$postID}' and recipe_user_id = '{$_SESSION['user_id']}'";
-        $result = mysqli_query($connection, $query); 
+        $result = mysqli_query($connection, $query);
+        $_SESSION["message"] = "Your recipe has been deleted.";
     } else {
-        echo "Problem, your post can currently not be deleted!";
+        $_SESSION["message"] = "Woops! Something went wrong.";
     }
     header('Location: index.php');
     exit;

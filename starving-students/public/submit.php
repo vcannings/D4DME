@@ -35,12 +35,6 @@
         $instructions = "";
         $image = "";
     }
-// V: validating the inputted data using a custom function and a few php functions
-    if ($_SERVER["REQUEST_METHOD"] == "POST") { // V: this line is saying if the method of inputting data is post, initiae this function
-        $title = ucfirst($title); // V: ucfirst will edit the inputted data variable in the brackets to have a capital letter at the start
-        }
-        $culture = refine_input($_POST["recipe_culture"]); // V: Refine input is the custom function I created. See functions.php for more details
-        $culture = ucfirst($culture);   
 ?>
     
 <?php
@@ -140,7 +134,7 @@
                 <h2>Instructions:</h2><textarea rows="8" cols="40" class="formExample" placeholder="1) instruction,  2) instruction..." value="<?php echo $instructions;?>" name="recipe_instructions"></textarea>
                 <span class="error">* <?php echo $instructionsErr; ?></span>
                 <h2>Image:</h2><textarea rows="1" cols="40" class="formExample" placeholder="Insert URL here" value="<?php echo $image;?>" name="recipe_image"></textarea>
-                <span class="error">* <?php echo $imageErr; ?></span>
+                <span class="error"><?php echo $imageErr; ?></span>
                 
                 <br><br>
                 <input class="buttonExample" type="submit" value="Submit" name="submit" />
