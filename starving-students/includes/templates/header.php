@@ -23,10 +23,10 @@
             </div>
             <div class="nav-bar-left">
                 <ul>
-                    <li><a href="home.php">About</a></li>
-                    <li><a href="index.php">Menu</a></li>
+                    <li id="navbar"><a id="navbar" href="home.php">About</a></li>
+                    <li id="navbar"><a id="navbar" href="index.php">Menu</a></li>
                     <?php if(isset($_SESSION["user"])) { ?>
-                    <li><a href="my_recipes.php">My Recipes</a></li>
+                    <li id="navbar"><a id="navbar" href="my_recipes.php">My Recipes</a></li>
                     <?php } else { ?>
                     <?php } ?>
                 </ul>
@@ -34,10 +34,10 @@
             <div class="nav-bar-right">
                 <ul>
                    <?php if(isset($_SESSION["user"])) { ?>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li id="navbar"><a id="navbar" href="logout.php">Logout</a></li>
                     <?php } else { ?>
-                    <li><a href="login.php">Log in</a></li>
-                    <li><a href="signup.php">Sign Up</a></li>
+                    <li id="navbar"><a id="navbar" href="login.php">Log in</a></li>
+                    <li id="navbar"><a id="navbar" href="signup.php">Sign Up</a></li>
                     <?php } ?>
                 </ul>
             </div><br>
